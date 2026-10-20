@@ -1,0 +1,105 @@
+:root{
+  --fundo:#F7F4EF;
+  --cartao:#FFFFFF;
+  --texto:#2E2A26;
+  --texto-suave:#6E675E;
+  --verde:#47624A;
+  --verde-escuro:#38503C;
+  --linha:#E3DCD2;
+  --whats:#25D366;
+  --whats-escuro:#1DA851;
+  --raio:16px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:var(--fundo);
+  color:var(--texto);
+  line-height:1.6;
+}
+.modelo-bar{
+  background:var(--verde-escuro);color:#FFF8EE;text-align:center;
+  font-size:.78rem;letter-spacing:.04em;padding:.55rem 1rem;font-weight:600;
+}
+.page{max-width:680px;margin:0 auto;padding:2rem 1.1rem 5.5rem}
+
+/* Capa / bio */
+.hero{text-align:center;padding:1.2rem 0 2rem}
+.foto-placeholder{
+  width:132px;height:132px;margin:0 auto 1.1rem;border-radius:50%;
+  border:2px dashed var(--verde);color:var(--verde);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;
+  background:#EFF2EC;font-size:.68rem;font-weight:700;letter-spacing:.08em;
+}
+.hero h1{font-family:Georgia,"Times New Roman",serif;font-size:2rem;font-weight:600;line-height:1.2}
+.profissao{color:var(--verde);font-weight:700;margin-top:.35rem}
+.cidade{color:var(--texto-suave);font-size:.95rem}
+.frase{margin:1rem auto 1.4rem;max-width:480px;color:var(--texto-suave)}
+.links-bio{display:flex;flex-direction:column;gap:.7rem;max-width:440px;margin:0 auto}
+.btn{
+  display:block;text-align:center;text-decoration:none;font-weight:700;
+  padding:.95rem 1.2rem;border-radius:999px;font-size:1rem;transition:transform .15s,background .15s;
+}
+.btn:active{transform:scale(.98)}
+.btn-whats{background:var(--whats);color:#08351A}
+.btn-whats:hover{background:var(--whats-escuro);color:#fff}
+.btn-insta{background:var(--verde);color:#fff}
+.btn-insta:hover{background:var(--verde-escuro)}
+.btn-outro{background:transparent;color:var(--verde);border:2px solid var(--verde)}
+
+/* Seções */
+.secao{padding:1.8rem 0;border-top:1px solid var(--linha)}
+.secao h2{font-family:Georgia,"Times New Roman",serif;font-size:1.45rem;margin-bottom:.9rem}
+.secao p{color:var(--texto-suave);margin-bottom:.8rem}
+.card-formacao{
+  background:var(--cartao);border:1px solid var(--linha);border-radius:var(--raio);
+  padding:1.2rem 1.3rem;margin-top:1.1rem;
+}
+.card-formacao h3{font-size:1.05rem;margin-bottom:.6rem}
+.card-formacao ul{list-style:none}
+.card-formacao li{padding:.35rem 0;color:var(--texto-suave)}
+.card-formacao strong{color:var(--texto)}
+
+/* Áreas */
+.grid-areas{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.card-area{background:var(--cartao);border:1px solid var(--linha);border-radius:var(--raio);padding:1.1rem}
+.card-area h3{font-size:1rem;margin-bottom:.4rem;color:var(--verde-escuro)}
+.card-area p{font-size:.92rem;margin:0}
+@media(max-width:520px){.grid-areas{grid-template-columns:1fr}}
+
+/* Como funciona */
+.passos{list-style:none;counter-reset:passo}
+.passos li{
+  counter-increment:passo;background:var(--cartao);border:1px solid var(--linha);
+  border-radius:var(--raio);padding:1rem 1.2rem 1rem 3.4rem;margin-bottom:.7rem;position:relative;
+}
+.passos li::before{
+  content:counter(passo);position:absolute;left:1rem;top:1rem;
+  width:1.7rem;height:1.7rem;border-radius:50%;background:var(--verde);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem;
+}
+.passos strong{display:block}
+.passos span{color:var(--texto-suave);font-size:.94rem}
+
+/* FAQ */
+details{
+  background:var(--cartao);border:1px solid var(--linha);border-radius:var(--raio);
+  padding:.9rem 1.2rem;margin-bottom:.6rem;
+}
+summary{font-weight:700;cursor:pointer}
+details p{margin:.6rem 0 0;font-size:.95rem}
+
+/* CTA e rodapé */
+.cta-final{text-align:center}
+.cta-final .btn{max-width:440px;margin:1rem auto 0}
+.rodape{text-align:center;color:var(--texto-suave);font-size:.9rem;padding-top:1.6rem;border-top:1px solid var(--linha)}
+.rodape a{color:var(--verde);text-decoration:none;font-weight:600}
+.rodape .copy{font-size:.8rem;margin-top:.5rem}
+
+/* WhatsApp flutuante */
+.whats-flutuante{
+  position:fixed;right:18px;bottom:18px;width:58px;height:58px;border-radius:50%;
+  background:var(--whats);color:#fff;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 18px rgba(0,0,0,.25);z-index:50;
+}
