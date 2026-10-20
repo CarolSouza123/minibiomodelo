@@ -21,7 +21,7 @@ Conselho de Psicologia.
 ## Arquivos
 
 - `index.html` — página completa (com meta tags de SEO e dados estruturados já no formato)
-- `styles.css` — visual (verde sálvia + areia, mobile-first)
+- `styles.css` — visual mobile-first: paleta do acolhimento (creme quente, sálvia, argila e marrom suave) e fontes Fraunces (títulos) + Nunito Sans (texto), via Google Fonts com `display=swap`
 - `script.js` — só o ano automático do rodapé
 
 Sem imagens binárias: a foto é um marcador em CSS/SVG, trocado pela foto real da cliente na personalização.

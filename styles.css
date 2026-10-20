@@ -1,105 +1,169 @@
 :root{
-  --fundo:#F7F4EF;
-  --cartao:#FFFFFF;
-  --texto:#2E2A26;
-  --texto-suave:#6E675E;
-  --verde:#47624A;
-  --verde-escuro:#38503C;
-  --linha:#E3DCD2;
+  /* Paleta do acolhimento: creme quente, sálvia, argila e marrom suave */
+  --fundo:#FAF5EE;
+  --fundo-suave:#F3EADB;
+  --cartao:#FFFDF9;
+  --texto:#40382F;
+  --texto-suave:#7D7264;
+  --salvia:#7A8B6F;
+  --salvia-escuro:#5C6F57;
+  --argila:#C08552;
+  --argila-suave:#EFDFCE;
+  --linha:#E9DFD0;
   --whats:#25D366;
   --whats-escuro:#1DA851;
-  --raio:16px;
+  --raio:20px;
+  --sombra:0 10px 30px rgba(92,80,60,.10);
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{
-  font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  background:var(--fundo);
+  font-family:"Nunito Sans",-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:16px;
+  background:
+    radial-gradient(420px 300px at 8% -40px, rgba(122,139,111,.20), transparent 70%),
+    radial-gradient(380px 280px at 100% 60px, rgba(192,133,82,.16), transparent 70%),
+    var(--fundo);
   color:var(--texto);
-  line-height:1.6;
+  line-height:1.65;
+  -webkit-tap-highlight-color:transparent;
+  overflow-x:hidden;
 }
-.modelo-bar{
-  background:var(--verde-escuro);color:#FFF8EE;text-align:center;
-  font-size:.78rem;letter-spacing:.04em;padding:.55rem 1rem;font-weight:600;
-}
-.page{max-width:680px;margin:0 auto;padding:2rem 1.1rem 5.5rem}
+img,svg{max-width:100%}
+a,button,summary{touch-action:manipulation}
+:focus-visible{outline:3px solid rgba(192,133,82,.55);outline-offset:2px}
 
-/* Capa / bio */
-.hero{text-align:center;padding:1.2rem 0 2rem}
-.foto-placeholder{
-  width:132px;height:132px;margin:0 auto 1.1rem;border-radius:50%;
-  border:2px dashed var(--verde);color:var(--verde);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;
-  background:#EFF2EC;font-size:.68rem;font-weight:700;letter-spacing:.08em;
+.modelo-bar{
+  background:var(--salvia-escuro);color:#FFF6E8;text-align:center;
+  font-size:.76rem;letter-spacing:.05em;padding:.6rem 1rem;font-weight:700;
 }
-.hero h1{font-family:Georgia,"Times New Roman",serif;font-size:2rem;font-weight:600;line-height:1.2}
-.profissao{color:var(--verde);font-weight:700;margin-top:.35rem}
-.cidade{color:var(--texto-suave);font-size:.95rem}
-.frase{margin:1rem auto 1.4rem;max-width:480px;color:var(--texto-suave)}
-.links-bio{display:flex;flex-direction:column;gap:.7rem;max-width:440px;margin:0 auto}
+.page{
+  max-width:680px;margin:0 auto;
+  padding:1.6rem clamp(18px,5vw,28px) calc(5.5rem + env(safe-area-inset-bottom));
+}
+
+/* ===== Capa / bio ===== */
+.hero{text-align:center;padding:.8rem 0 2.1rem}
+.foto-placeholder{
+  width:clamp(118px,32vw,140px);height:clamp(118px,32vw,140px);
+  margin:0 auto 1.15rem;border-radius:50%;
+  border:2px dashed var(--argila);color:var(--salvia-escuro);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;
+  background:linear-gradient(160deg,#FFFDF9,var(--argila-suave));
+  box-shadow:0 0 0 7px #FFFDF9, var(--sombra);
+  font-size:.66rem;font-weight:800;letter-spacing:.1em;
+}
+.hero h1{
+  font-family:"Fraunces",Georgia,"Times New Roman",serif;
+  font-size:clamp(1.85rem,7.4vw,2.5rem);font-weight:500;line-height:1.15;letter-spacing:.01em;
+}
+.profissao{
+  color:var(--salvia-escuro);font-weight:800;margin-top:.45rem;
+  text-transform:uppercase;letter-spacing:.14em;font-size:.82rem;
+}
+.cidade{color:var(--texto-suave);font-size:.97rem;margin-top:.15rem}
+.frase{
+  font-family:"Fraunces",Georgia,serif;font-style:italic;font-size:1.08rem;
+  color:var(--texto-suave);margin:1.05rem auto 1.5rem;max-width:470px;line-height:1.55;
+}
+.links-bio{display:flex;flex-direction:column;gap:.75rem;max-width:440px;margin:0 auto}
 .btn{
-  display:block;text-align:center;text-decoration:none;font-weight:700;
-  padding:.95rem 1.2rem;border-radius:999px;font-size:1rem;transition:transform .15s,background .15s;
+  display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;
+  font-weight:800;font-size:1rem;min-height:54px;
+  padding:.9rem 1.2rem;border-radius:18px;
+  box-shadow:var(--sombra);
+  transition:transform .15s,background .15s,box-shadow .15s;
 }
 .btn:active{transform:scale(.98)}
-.btn-whats{background:var(--whats);color:#08351A}
+.btn-whats{background:var(--whats);color:#06351B;box-shadow:0 10px 24px rgba(37,211,102,.28)}
 .btn-whats:hover{background:var(--whats-escuro);color:#fff}
-.btn-insta{background:var(--verde);color:#fff}
-.btn-insta:hover{background:var(--verde-escuro)}
-.btn-outro{background:transparent;color:var(--verde);border:2px solid var(--verde)}
+.btn-insta{background:var(--salvia-escuro);color:#FFF9F0}
+.btn-insta:hover{background:var(--salvia)}
+.btn-outro{background:rgba(255,253,249,.7);color:var(--salvia-escuro);border:1.5px solid var(--salvia);box-shadow:none}
 
-/* Seções */
-.secao{padding:1.8rem 0;border-top:1px solid var(--linha)}
-.secao h2{font-family:Georgia,"Times New Roman",serif;font-size:1.45rem;margin-bottom:.9rem}
-.secao p{color:var(--texto-suave);margin-bottom:.8rem}
+/* ===== Seções ===== */
+.secao{padding:2rem 0;border-top:1px solid var(--linha)}
+.secao h2{
+  font-family:"Fraunces",Georgia,serif;font-weight:500;
+  font-size:clamp(1.4rem,5.6vw,1.65rem);margin-bottom:1rem;line-height:1.25;
+}
+.secao h2::after{
+  content:"";display:block;width:44px;height:3px;border-radius:3px;
+  background:var(--argila);margin-top:.45rem;
+}
+.secao p{color:var(--texto-suave);margin-bottom:.85rem}
 .card-formacao{
   background:var(--cartao);border:1px solid var(--linha);border-radius:var(--raio);
-  padding:1.2rem 1.3rem;margin-top:1.1rem;
+  padding:1.25rem 1.35rem;margin-top:1.15rem;box-shadow:var(--sombra);
 }
-.card-formacao h3{font-size:1.05rem;margin-bottom:.6rem}
+.card-formacao h3{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:1.12rem;margin-bottom:.55rem}
 .card-formacao ul{list-style:none}
-.card-formacao li{padding:.35rem 0;color:var(--texto-suave)}
+.card-formacao li{padding:.4rem 0;color:var(--texto-suave)}
 .card-formacao strong{color:var(--texto)}
 
-/* Áreas */
-.grid-areas{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
-.card-area{background:var(--cartao);border:1px solid var(--linha);border-radius:var(--raio);padding:1.1rem}
-.card-area h3{font-size:1rem;margin-bottom:.4rem;color:var(--verde-escuro)}
-.card-area p{font-size:.92rem;margin:0}
-@media(max-width:520px){.grid-areas{grid-template-columns:1fr}}
+/* ===== Áreas ===== */
+.grid-areas{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
+.card-area{
+  background:var(--cartao);border:1px solid var(--linha);border-radius:var(--raio);
+  padding:1.15rem;box-shadow:var(--sombra);
+}
+.card-area h3{font-size:1rem;margin-bottom:.4rem;color:var(--salvia-escuro)}
+.card-area p{font-size:.93rem;margin:0}
+@media(max-width:560px){.grid-areas{grid-template-columns:1fr}}
 
-/* Como funciona */
+/* ===== Como funciona ===== */
 .passos{list-style:none;counter-reset:passo}
 .passos li{
   counter-increment:passo;background:var(--cartao);border:1px solid var(--linha);
-  border-radius:var(--raio);padding:1rem 1.2rem 1rem 3.4rem;margin-bottom:.7rem;position:relative;
+  border-radius:var(--raio);padding:1.05rem 1.2rem 1.05rem 3.5rem;margin-bottom:.75rem;
+  position:relative;box-shadow:var(--sombra);
 }
 .passos li::before{
-  content:counter(passo);position:absolute;left:1rem;top:1rem;
-  width:1.7rem;height:1.7rem;border-radius:50%;background:var(--verde);color:#fff;
-  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem;
+  content:counter(passo);position:absolute;left:1.05rem;top:1.05rem;
+  width:1.8rem;height:1.8rem;border-radius:50%;
+  background:linear-gradient(150deg,var(--salvia),var(--salvia-escuro));color:#FFF9F0;
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;
 }
 .passos strong{display:block}
-.passos span{color:var(--texto-suave);font-size:.94rem}
+.passos span{color:var(--texto-suave);font-size:.95rem}
 
-/* FAQ */
+/* ===== FAQ ===== */
 details{
   background:var(--cartao);border:1px solid var(--linha);border-radius:var(--raio);
-  padding:.9rem 1.2rem;margin-bottom:.6rem;
+  padding:.4rem 1.25rem;margin-bottom:.65rem;box-shadow:var(--sombra);
 }
-summary{font-weight:700;cursor:pointer}
-details p{margin:.6rem 0 0;font-size:.95rem}
+summary{font-weight:800;cursor:pointer;padding:.85rem 0;min-height:48px;display:flex;align-items:center}
+details p{margin:0 0 1rem;font-size:.95rem}
 
-/* CTA e rodapé */
+/* ===== CTA e rodapé ===== */
 .cta-final{text-align:center}
-.cta-final .btn{max-width:440px;margin:1rem auto 0}
-.rodape{text-align:center;color:var(--texto-suave);font-size:.9rem;padding-top:1.6rem;border-top:1px solid var(--linha)}
-.rodape a{color:var(--verde);text-decoration:none;font-weight:600}
+.cta-final h2::after{margin-left:auto;margin-right:auto}
+.cta-final .btn{max-width:440px;margin:1.1rem auto 0}
+.rodape{
+  text-align:center;color:var(--texto-suave);font-size:.92rem;
+  padding-top:1.7rem;border-top:1px solid var(--linha);
+}
+.rodape a{color:var(--salvia-escuro);text-decoration:none;font-weight:700}
 .rodape .copy{font-size:.8rem;margin-top:.5rem}
 
-/* WhatsApp flutuante */
+/* ===== WhatsApp flutuante ===== */
 .whats-flutuante{
-  position:fixed;right:18px;bottom:18px;width:58px;height:58px;border-radius:50%;
+  position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));
+  width:58px;height:58px;border-radius:50%;
   background:var(--whats);color:#fff;display:flex;align-items:center;justify-content:center;
-  box-shadow:0 6px 18px rgba(0,0,0,.25);z-index:50;
+  box-shadow:0 8px 22px rgba(6,53,27,.35);z-index:50;
+}
+.whats-flutuante:active{transform:scale(.95)}
+
+/* ===== Telas bem pequenas ===== */
+@media(max-width:360px){
+  .hero h1{font-size:1.7rem}
+  .btn{font-size:.95rem}
+  .passos li{padding-left:3.1rem}
+}
+
+/* ===== Movimento reduzido ===== */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .btn,.whats-flutuante{transition:none}
 }
