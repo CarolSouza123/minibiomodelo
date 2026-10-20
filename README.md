@@ -7,8 +7,11 @@ fictícia é apresentada como real.
 
 ## Estrutura da página
 
-1. Capa/bio: foto (marcador), nome, profissão + CRP, cidade, frase de apresentação
-   e botões de WhatsApp, Instagram e um link livre.
+1. Banner principal desenhado (como a referência): foto em arco em grande destaque
+   (marcador), monograma/marca, nome em destaque, profissão espaçada, CRP e frase.
+   Abaixo, cartões-banner de links no mesmo formato da referência: banner escuro
+   principal (destaque + frase de confiança + botão WhatsApp + mini foto), banner do
+   Instagram e banner de outro link, todos com botão em pílula.
 2. Sobre mim: apresentação + cartão de formação/abordagem/CRP.
 3. Áreas de atendimento: 4 cartões substituíveis.
 4. Como funciona: 3 passos (WhatsApp → primeira sessão → processo).
