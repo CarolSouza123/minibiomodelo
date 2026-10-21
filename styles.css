@@ -68,7 +68,7 @@ a,summary{touch-action:manipulation}
 }
 .hero-foto{
   position:relative;
-  width:min(76vw,300px);aspect-ratio:4/4.7;margin:0 auto;
+  width:100%;aspect-ratio:4/4.4;margin:0 auto;
   border-radius:999px 999px 26px 26px;
   background:
     radial-gradient(200px 160px at 50% 18%, rgba(255,253,249,.85), transparent 70%),
@@ -83,10 +83,11 @@ a,summary{touch-action:manipulation}
   content:"";position:absolute;border-radius:999px 999px 26px 26px;pointer-events:none;
 }
 .hero-foto::before{inset:-14px -14px auto -14px;height:calc(100% + 14px);border:1.5px solid rgba(192,133,82,.45);border-bottom:none;z-index:-1}
-.hero-foto-titulo{font-weight:900;letter-spacing:.14em;font-size:1.02rem}
-.hero-foto-sub{font-size:.85rem;color:var(--salvia-profundo);opacity:.85;max-width:210px;line-height:1.45}
+.hero-foto svg{width:92px;height:92px}
+.hero-foto-titulo{font-weight:900;letter-spacing:.16em;font-size:1.35rem}
+.hero-foto-sub{font-size:.98rem;color:var(--salvia-profundo);opacity:.85;max-width:320px;line-height:1.5}
 .hero-crp{
-  position:absolute;right:-8px;bottom:26px;
+  position:absolute;right:12px;bottom:24px;
   background:var(--argila);color:#FFF9F0;font-weight:800;font-size:.74rem;
   padding:.42rem .8rem;border-radius:999px;box-shadow:0 8px 18px rgba(192,133,82,.4);
   letter-spacing:.04em;
